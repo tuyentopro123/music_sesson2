@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;900&display=swap');
+:root {
+    --primary-color: #b88ce2;
+    --text-color: rgb(238, 179, 243);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #eee;
+}
+
+.player {
+    position: relative;
+    max-width: 480px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.player.playing .icon-pause {
+    display: inline-block;
+}
+
+.player.playing .icon-play {
+    display: none;
+}
+
+.player .icon-pause {
+    display: none;
+}
+
+header h4 {
+    color: var(--primary-color);
+    font-weight: 300;
+    font-size: 12px;
+  }
+  
+header h2 {
+    color: #fff;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.dashboard {
+    padding: 16px 16px 14px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 480px;
+    background-image:linear-gradient(180deg,rgb(164, 44, 243),#402d50);
+    border-bottom: 1px solid #ebebeb;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.cd {
+    display: block;
+    width: 200px;
+    margin: auto;
+  }
+
+.cd .cd-thumb {
+    position: relative;
+    padding-top: 100%;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0 40px 0;
+}
+
+.control  {
+    color: #fff;
+    font-size: 18px;
+    padding: 18px;
+}
+
+.control .btn-toggle-play {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    color: #fff;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px 0 20px;
+}
+
+.up {
+    display: none;
+}
+
+.up:hover {
+    background-color: hsla(0,0%,100%,.1);
+    border-radius:50%;
+}
+
+.control.apply .up{
+    display: block;
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.control .btn-next,
+.control .btn-prev {
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.control .btn-next:hover,
+.control .btn-prev:hover {
+    background-color: hsla(0,0%,100%,.1);
+    border-radius:50%;
+}
+
+.control .btn-toggle-play:hover {
+    border: 1px solid #c662ef;
+    color: #c662ef;
+}
+
+.support {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 30px 20px 30px;
+}
+
+.support .btn {
+    font-size: 15px;
+    color: var(--text-color);
+}
+
+.btn-like.active .fas{
+    color: rgb(240, 89, 160);
+}
+
+.btn-random.active .fas{
+    color: rgb(240, 89, 160);
+}
+
+.btn-repeat.active .fas{
+    color: rgb(240, 89, 160);
+}
+
+.btn-option.active .fas{
+    color: rgb(240, 89, 160);
+}
+
+
+.btn-like .fas {
+    color: none;
+}
+
+.appear {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#642c8b;
+    height:40px;
+}
+
+.fa-caret-up,
+.fa-caret-down {
+    font-size:18px;
+}
+
+.btn-down {
+    color: #fff;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-caret-up {
+    display: none;
+}
+
+.btn-down:hover {
+    background-color: hsla(0,0%,100%,.1);
+    border-radius:50%;
+    cursor: pointer;
+}
+
+.text-content {
+    font-size:15px;
+    padding-bottom: 2px;
+    color:#fff;
+}
+
+.playlist {
+    padding: 12px;
+    height: 500px;
+    display: none;
+    overflow-y: scroll;
+    margin-top: 550px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.playlist.slip-down {
+    animation:slipDown linear .45s;
+    display: block;
+}
+
+.slider-container {
+    height:18px;
+    display: flex;
+    align-items: center;
+}
+
+.time-left,
+.time-right {
+    font-size: 12px;
+    color:#b88ce2;
+}
+
+.progress {
+    width: 90%;
+    height: 5px;
+    -webkit-appearance: none;
+    background: #d3d3d3;
+    outline: none;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 0 10px 0 10px;
+}
+
+.progress:hover {
+    height:15px;
+}
+
+.progress:hover::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #d961f1;
+    border: 4px solid #222;
+}
+
+.progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #00adff;
+    width: 15px;
+    height: 15px;
+    -webkit-box-shadow: -407px 0 0 400px #00adff;
+    box-shadow: -407px 0 0 400px #00adff;
+}
+
+.volume {
+    position: relative;
+    left:45px;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+
+.muted.active .fa-volume-up{
+    display: block;
+}
+
+.muted.active .fa-volume-mute {
+    display: none;
+}
+
+.muted .fa-volume-up {
+    display: none;
+}
+
+.muted,
+.volume-up {
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.muted:hover,
+.volume-up:hover {
+    background-color: hsla(0,0%,100%,.1);
+    border-radius:50%;
+    cursor: pointer;
+}
+
+.sound {
+	padding: 0;
+	width: 50%;
+	height: 4px;
+	cursor: pointer;
+	display: block;
+    margin: 0 10px;
+    border-radius:4px;
+}
+
+.sound:focus {
+    outline: none;
+}
+
+.song {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    background-color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px rgb(0 0 0 / 10%);
+  }
+
+
+  .song:hover {
+    box-shadow:5px 5px 8px rgb(0 0 0 / 10%) ;
+    transform: translate(-2px,-2px);
+    /* border: 1px solid red; */
+  }
+
+  .song.active {
+    background-color: var(--primary-color);
+  }
+  .song:active {
+    opacity: 0.8;
+  }
+  .song.active .title,
+  .song.active .author,
+  .song.active .option {
+    color: #fff;
+  }
+  .song .thumb {
+    width: 46px;
+    height: 46px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin: 0 8px;
+  }
+  .song .body {
+    flex: 1;
+    padding: 0 16px;
+  }
+  .song .title {
+    margin-bottom: 4px;
+    font-size: 18px;
+    color: #333;
+  }
+  .song .author {
+    font-size: 12px;
+    color: #999;
+  }
+  .song .option {
+    padding: 16px 8px;
+    color: #999;
+    font-size: 18px;
+  }
+
+  
+
+  @keyframes slipDown {
+    0% {margin-top: 0;}
+    25% {margin-top: 140px;}
+    50% {margin-top: 275px;}
+    75% {margin-top: 410px;}
+    100%{margin-top: 550px;}
+  }

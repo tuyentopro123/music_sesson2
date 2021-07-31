@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>musics_sesson2</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" class="css">
+
+</head>
+<body>
+    <div class="player">
+        <!-- dashboard -->
+        <div class="dashboard">
+            <!-- Header -->
+            <header>
+                <h2>Bài Hát đang phát</h2>
+                <h4>Ca sĩ</h4>
+            </header>
+
+            <div class="cd">
+                <div
+                  class="cd-thumb"
+                  style="
+                    background-image: url('https://i.pinimg.com/originals/bf/a5/61/bfa561a38078dace069bc2b499079c0a.jpg');
+                  "
+                ></div>
+            </div>
+
+            <!-- controls -->
+            <div class="control ">
+              
+              <div class="btn btn-repeat up">
+                <i class="fas fa-redo"></i>
+              </div>
+              <div class="btn btn-prev">
+                <i class="fas fa-step-backward"></i>
+              </div>
+              <div class="btn btn-toggle-play">
+                <i class="fas fa-pause icon-pause"></i>
+                <i class="fas fa-play icon-play"></i>
+              </div>
+              <div class="btn btn-next">
+                <i class="fas fa-step-forward"></i>
+              </div>
+              <div class="btn btn-random up">
+                <i class="fas fa-random"></i>
+              </div>
+              
+            </div>
+            <div class="slider-container">
+              <span class="time-left">00:00</span>
+              <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100"/>
+              <span class="time-right"></span>
+            </div>
+
+            <!-- Accessibility  -->
+            <div class="Accessibility">
+              <div class="support">
+                <div class="btn btn-repeat down">
+                  <i class="fas fa-redo"></i>
+                </div>
+                <div class="btn btn-like">
+                  <i class="fas fa-heart"></i>
+                </div>
+                <div class="btn btn-random down">
+                  <i class="fas fa-random"></i>
+                </div>
+                <div class="btn btn-option">
+                  <i class="fas fa-download"></i>
+                </div>
+              </div>
+  
+              <div class="volume">
+                <div class="btn muted">
+                  <i class="fas fa-volume-up"></i>
+                  <i class="fas fa-volume-mute"></i>
+                </div>
+                <input id="sound" class="sound" type="range" value="0.5" step="0.01" min="0" max="1"/>
+                
+              </div>
+            </div>
+
+             <!--Playlist appear  -->
+          <div class="appear">
+            <div class="btn-down">
+              <i class="fas fa-caret-down"></i>
+              <i class="fas fa-caret-up"></i>
+            </div>
+            <p class="text-content">Nhấn mũi tên để hiển thị playlist</p>
+          </div>
+    
+            <audio id="audio" src=""></audio>
+          </div>
+       
+        <!-- Playlist -->
+        <div class="playlist">
+         
+          </div>
+        </div>
+    </div>
+
+     
+    <script src="./assets/css/app.js"></script>
+</body>
+</html>
