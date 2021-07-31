@@ -301,6 +301,25 @@ const app = {
                 _this.isAppear = true
             }
         }
+
+        // Lắng nghe click vào playlist
+        playlist.onclick = function (e) {
+            const songNode = e.target.closest('.song:not(.active')
+
+            if(e.target.closest('.song:not(.active') || !e.target.closest('.option')) {
+                
+                // Xử lí khi click vào song
+                if(e.target.closest('.song:not(.active')) {
+                    if(songNode) {
+                        _this.currentIndex = Number(songNode.dataset.index)
+                        _this.loadCurrentSong()
+                        _this.render()
+                        audio.play()
+                    }
+                }
+
+            }
+        }
     },
 
     scrollToActiveSong: function () {
